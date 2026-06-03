@@ -6,38 +6,38 @@ const previewFacts = [...document.querySelectorAll(".case-preview dd")];
 const openCaseLink = document.querySelector(".open-case");
 
 const caseData = {
+  lightsticks: {
+    title: "3D Printed LED Lightsticks",
+    summary: "A self-directed product experiment that turned custom 3D printed concert lightsticks into a fast-moving Etsy storefront with about 600 sales in five months.",
+    thumb: "thumb-lightsticks",
+    href: "case-lightsticks.html",
+    facts: ["Founder / Product Designer", "Physical product, storefront UX, fulfillment", "Dedicated case study page"],
+  },
+  assassination: {
+    title: "Assassination Classroom Student Mobile App Mockup",
+    summary: "A playful mobile app concept built around classroom identity, student ranking, event reminders, and a visual system inspired by the tone of the series.",
+    thumb: "thumb-assassination",
+    href: "case-assassination-classroom.html",
+    facts: ["Mobile UI Design", "Fan app concept, dashboard, ranking flows", "Dedicated case study page"],
+  },
+  doterra: {
+    title: "doTERRA Essential Oils App Redesign",
+    summary: "A wellness app redesign focused on onboarding, guided personalization, and making oil education easier to browse without overwhelming new users.",
+    thumb: "thumb-doterra",
+    href: "case-doterra.html",
+    facts: ["UX/UI Design", "Onboarding, search, product education", "Dedicated case study page"],
+  },
   "la-fitness": {
     title: "LA Fitness Mobile Redesign",
     summary: "A cleaner member experience for finding classes, managing check-ins, and making everyday fitness tasks feel less fragmented.",
-    thumb: "thumb-orbit",
+    thumb: "thumb-la-fitness",
     href: "case-la-fitness.html",
     facts: ["UX/UI Design", "Mobile IA, booking flows, usability", "Dedicated case study page"],
-  },
-  signal: {
-    title: "Signal Health",
-    summary: "A clinical workflow concept for helping teams scan patient status, surface priority, and reduce handoff ambiguity.",
-    thumb: "thumb-signal",
-    href: "case-signal.html",
-    facts: ["Product Design", "Clinical dashboards, status clarity, triage", "Dedicated case study page"],
-  },
-  field: {
-    title: "Field Notes AI",
-    summary: "A research synthesis workspace that turns interviews, observations, and messy notes into clearer product direction.",
-    thumb: "thumb-field",
-    href: "case-field-notes.html",
-    facts: ["UX Strategy", "AI-assisted research, synthesis, collaboration", "Dedicated case study page"],
-  },
-  atlas: {
-    title: "Atlas Checkout",
-    summary: "A commerce flow focused on trust, decision confidence, and reducing friction at the highest-intent moment.",
-    thumb: "thumb-atlas",
-    href: "case-atlas.html",
-    facts: ["Interaction Design", "Checkout UX, conversion, trust signals", "Dedicated case study page"],
   },
 };
 
 function showCase(caseId) {
-  const selectedCase = caseData[caseId] || caseData["la-fitness"];
+  const selectedCase = caseData[caseId] || caseData.lightsticks;
 
   caseCards.forEach((card) => {
     card.classList.toggle("active", card.dataset.case === caseId);

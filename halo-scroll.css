@@ -293,7 +293,7 @@ body {
 .case-card {
   display: grid;
   gap: 10px;
-  min-height: 168px;
+  min-height: 188px;
   padding: 12px;
   color: #e7f2ff;
   text-decoration: none;
@@ -311,7 +311,8 @@ body {
 
 .case-card strong {
   display: block;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  line-height: 1.12;
 }
 
 .case-card em {
@@ -326,6 +327,9 @@ body {
 .preview-frame {
   min-height: 96px;
   border: 8px solid rgba(5, 10, 19, 0.7);
+  background-color: #0b1425;
+  background-position: center;
+  background-size: cover;
 }
 
 .preview-frame {
@@ -358,6 +362,30 @@ body {
     linear-gradient(120deg, rgba(222, 233, 245, 0.86) 0 18%, transparent 18% 33%, rgba(154, 209, 255, 0.54) 33% 45%, transparent 46%),
     radial-gradient(circle at 70% 72%, rgba(205, 149, 104, 0.78), transparent 20%),
     linear-gradient(145deg, #10243e, #060d18);
+}
+
+.thumb-lightsticks {
+  background-image:
+    linear-gradient(180deg, rgba(4, 8, 15, 0.08), rgba(4, 8, 15, 0.42)),
+    url("assets/etsy-storefront-lightsticks.png");
+}
+
+.thumb-assassination {
+  background-image:
+    linear-gradient(180deg, rgba(4, 8, 15, 0.03), rgba(4, 8, 15, 0.22)),
+    url("assets/assassination-classroom-cover.png");
+}
+
+.thumb-doterra {
+  background-image:
+    linear-gradient(180deg, rgba(4, 8, 15, 0.1), rgba(4, 8, 15, 0.38)),
+    url("assets/doterra-redesign-screens.png");
+}
+
+.thumb-la-fitness {
+  background-image:
+    linear-gradient(180deg, rgba(4, 8, 15, 0.08), rgba(4, 8, 15, 0.34)),
+    url("assets/la-fitness-banner.png");
 }
 
 .case-preview {
@@ -517,6 +545,19 @@ body {
   padding: 0 58px 58px;
 }
 
+.article-image {
+  padding: 0 58px 58px;
+}
+
+.article-image img {
+  width: 100%;
+  display: block;
+  max-height: 560px;
+  object-fit: contain;
+  background: rgba(3, 7, 13, 0.5);
+  border: 1px solid rgba(151, 190, 236, 0.16);
+}
+
 .phone-mock {
   display: grid;
   place-items: end center;
@@ -651,6 +692,7 @@ body {
 .record-shell {
   max-width: 1180px;
   margin: 0 auto;
+  overflow: hidden;
   background: linear-gradient(90deg, rgba(8, 18, 34, 0.92), rgba(18, 36, 60, 0.78));
   border: 1px solid rgba(161, 197, 236, 0.18);
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
@@ -685,15 +727,25 @@ body {
 }
 
 .rank-mark {
+  position: relative;
   display: grid;
   place-items: center;
   width: 128px;
   height: 128px;
-  color: #d7ecff;
-  background: linear-gradient(145deg, rgba(158, 185, 210, 0.9), rgba(58, 84, 112, 0.86));
-  border: 8px solid rgba(221, 231, 239, 0.88);
-  font-size: 4.8rem;
-  font-weight: 800;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 100%, rgba(255, 189, 105, 0.2), transparent 34%),
+    linear-gradient(145deg, rgba(42, 73, 107, 0.94), rgba(17, 27, 47, 0.9));
+  border: 1px solid rgba(221, 231, 239, 0.62);
+}
+
+.unicorn-mark img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
+  transform: translate(-1px, 1px);
+  filter: drop-shadow(0 0 16px rgba(179, 218, 255, 0.18));
 }
 
 .record-identity h1 {
@@ -748,23 +800,24 @@ body {
 }
 
 .portrait-card {
-  display: grid;
-  place-items: end center;
+  display: block;
   min-height: 420px;
-  padding: 24px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   color: rgba(230, 243, 255, 0.82);
-  background:
-    linear-gradient(160deg, transparent 0 42%, rgba(146, 189, 231, 0.22) 43% 45%, transparent 46%),
-    radial-gradient(circle at 52% 24%, rgba(98, 160, 230, 0.28), transparent 24%),
-    linear-gradient(160deg, #0b1425, #1d3659);
+  background: #0b1425;
   border: 10px solid rgba(221, 231, 239, 0.78);
 }
 
-.portrait-card span {
+.portrait-photo img {
   width: 100%;
-  padding: 10px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.08);
+  min-height: 420px;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 52% 30%;
+  filter: saturate(0.95) contrast(1.05) brightness(0.9);
 }
 
 .skill-medals {
@@ -782,14 +835,105 @@ body {
 }
 
 .medal span {
-  display: block;
-  width: 70px;
-  height: 70px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
   margin-bottom: 16px;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 50% 34%, rgba(250, 230, 133, 0.96), transparent 19%),
-    linear-gradient(145deg, rgba(166, 202, 229, 0.88), rgba(48, 71, 103, 0.88));
-  clip-path: polygon(50% 0, 88% 24%, 77% 76%, 50% 100%, 23% 76%, 12% 24%);
+    radial-gradient(circle at 50% 38%, rgba(169, 204, 239, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(24, 47, 79, 0.96), rgba(5, 13, 26, 0.96));
+  border: 1px solid rgba(179, 211, 246, 0.38);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 0 24px rgba(89, 166, 255, 0.14),
+    0 0 18px rgba(89, 166, 255, 0.12);
+}
+
+.medal span::before,
+.medal span::after {
+  content: "";
+  position: absolute;
+}
+
+.medal-research span::before {
+  width: 37px;
+  height: 25px;
+  top: 18px;
+  left: 15px;
+  border: 3px solid rgba(226, 242, 255, 0.9);
+  border-radius: 18px;
+}
+
+.medal-research span::after {
+  width: 10px;
+  height: 10px;
+  left: 28px;
+  top: 26px;
+  background: rgba(226, 242, 255, 0.9);
+  border-radius: 50%;
+  box-shadow:
+    -11px 0 0 -3px rgba(226, 242, 255, 0.9),
+    11px 0 0 -3px rgba(226, 242, 255, 0.9),
+    15px 15px 0 -5px rgba(226, 242, 255, 0.78);
+}
+
+.medal-systems span::before {
+  width: 12px;
+  height: 12px;
+  top: 16px;
+  left: 28px;
+  background: rgba(226, 242, 255, 0.9);
+  border-radius: 50%;
+  box-shadow:
+    -17px 26px 0 rgba(226, 242, 255, 0.9),
+    17px 26px 0 rgba(226, 242, 255, 0.9);
+}
+
+.medal-systems span::after {
+  width: 39px;
+  height: 31px;
+  top: 22px;
+  border-left: 2px solid rgba(226, 242, 255, 0.62);
+  border-right: 2px solid rgba(226, 242, 255, 0.62);
+  border-bottom: 2px solid rgba(226, 242, 255, 0.62);
+  transform: perspective(32px) rotateX(18deg);
+}
+
+.medal-motion span::before {
+  left: 21px;
+  top: 16px;
+  width: 29px;
+  height: 37px;
+  background: rgba(226, 242, 255, 0.9);
+  clip-path: polygon(4% 0, 100% 50%, 4% 100%, 26% 55%);
+}
+
+.medal-motion span::after {
+  width: 43px;
+  height: 43px;
+  border: 2px solid rgba(226, 242, 255, 0.28);
+  border-radius: 12px;
+  transform: rotate(45deg);
+}
+
+.medal-product span::before {
+  width: 34px;
+  height: 34px;
+  top: 17px;
+  border: 3px solid rgba(226, 242, 255, 0.9);
+  transform: rotate(45deg);
+}
+
+.medal-product span::after {
+  width: 11px;
+  height: 11px;
+  top: 28px;
+  background: rgba(226, 242, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(179, 218, 255, 0.36);
 }
 
 .medal b,
@@ -856,6 +1000,7 @@ body {
   }
 
   .article-showcase,
+  .article-image,
   .article-cards {
     padding: 0 24px 34px;
   }
